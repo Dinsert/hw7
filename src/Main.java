@@ -6,8 +6,9 @@ public class Main {
         int total = 0;
         int month = 0;
         while (total < 2459000) {
-            total = total + deposit;
-            month = month + 1;
+            total += deposit;
+            total += total / 100;
+            month += 1;
             System.out.println("Месяц " + month + " сумма накоплений равна " + total + " рублей");
         }
 
@@ -28,7 +29,7 @@ public class Main {
         for (int i = 1; i <= 10; i++) {
             int birthRate = 17 * totalNumber / 1000;
             int deathRate = 8 * totalNumber / 1000;
-            totalNumber = totalNumber + birthRate - deathRate;
+            totalNumber += birthRate - deathRate;
             System.out.println("Год " + i + " численность населения составляет " + totalNumber);
         }
 
@@ -36,16 +37,17 @@ public class Main {
         int contribution = 15000;
         int month1 = 0;
         while (contribution < 12_000_000) {
-            contribution = contribution + contribution / 12 * 7 / 100;
+            contribution += contribution / 12 * 7 / 100;
             month1++;
             System.out.println("Месяц " + month1 + " сумма накоплений равна " + contribution + " рублей");
         }
+        System.out.println("Всего месяцев " + month1);
 
 
         int contribution1 = 15000;
         int month2 = 0;
         while (contribution1 < 12_000_000) {
-            contribution1 = contribution1 + contribution1 / 12 * 7 / 100;
+            contribution1 += contribution1 / 12 * 7 / 100;
             month2++;
             if (month2 % 6 == 0) {
                 System.out.println("Месяц " + month2 + " сумма накоплений равна " + contribution1 + " рублей");
@@ -56,7 +58,7 @@ public class Main {
         int contribution2 = 15000;
         int month3 = 0;
         while (month3 <= 108) {
-            contribution2 = contribution2 + contribution2 / 12 * 7 / 100;
+            contribution2 += contribution2 / 100 * 7;
             month3++;
             if (month3 % 6 == 0) {
                 System.out.println("Месяц " + month3 + " сумма накоплений равна " + contribution2 + " рублей");
@@ -67,7 +69,7 @@ public class Main {
         int day = 2;
         while (day <= 31) {
             System.out.println("Сегодня пятница, " + day + " -е число. Необходимо подготовить отчёт");
-            day = day + 7;
+            day += 7;
         }
 
 
@@ -76,7 +78,7 @@ public class Main {
         int yearAfter = currentYear + 100;
         while (yearAgo < yearAfter) {
             yearAgo++;
-            if (yearAgo%79==0){
+            if (yearAgo % 79 == 0) {
                 System.out.println(yearAgo);
             }
         }
